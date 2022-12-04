@@ -1,0 +1,80 @@
+/*style.css*/
+body    {
+    margin: 0; /*enlève les marges de base de la page*/
+}
+
+.type > p{
+    background-color: black;
+    width: 75px;
+    color: white;
+    margin-top:0;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+header, nav, footer, section, article, aside {
+    border: 2px solid black;
+    margin: 5px;
+	box-sizing: border-box; /*obtenir des tailles cohérantes*/
+}
+
+header  {
+    background-color: #2ECCFA;
+
+    top: 0; /*coller en haut*/
+    right: 0; /*faire prendre toute la place en collant à droite*/
+    left: 0; /*et en collant à gauche*/
+    position: fixed; /*fixer l'entête*/
+    height: 100px; /*hauteur de 100px*/
+    z-index: 1; /*placer au premier plan*/
+}
+
+nav {
+    background-color: #555555;
+
+    left: 0; /*coller à gauche*/
+    top: 0; /*coller en haut*/
+    position: fixed; /*fixer*/
+    top: 100px;  /*décaller de 100px pour être en dessous du header*/
+    z-index: 1; /*placer au premier plan*/
+    width: 150px; /*taille du nav*/
+
+}
+
+section {
+    left: 0; /*coller à gauche*/
+    border: 4px solid #2E64FE;
+    position: relative; /*avoir une bonne disposition*/
+    top: 70px; /*se palacer en dessous du header qui est fixe*/
+    left: 160px; /*dépend de la taille du nav + 10*/
+    width: 80%;
+}
+
+aside   {
+    background-color: #0D7785;
+
+    width: 450px;
+    border: 4px solid #FF0000;
+    display: inline-block; /*afficher l'un à coté de l'autre*/
+
+}
+
+article {
+    background-color: #D9CFCC;
+    display: inline-block; /*afficher l'un à coté de l'autre*/
+    width: 60%;
+}
+
+footer  {
+    background-color: #2ECCFA;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+    top:100px;
+}
+
+div {
+    background-color: ;
+}

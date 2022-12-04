@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+ <head>
+   <link rel="stylesheet" href="style.css"/>
+    <metacharset="utf-8"/>
+    <title>Titre</title>
+ </head>
+
+ <body>
+   <formmethod="post"action="traitement.php">
+
+   <fieldset> <!-- faire des regroupements-->
+     <legend>Les différentes entrées</legend><!-- Titre du fieldset -->
+     <!-- autofocus : curseur par défaut dessus
+          required : obligatoire-->
+   <p>
+     <label for="pseudo">Votre pseudo : </label><input type="text" name="pseudo" id="pseudo" placeholder="Ex: Zozor" size="30" maxlength="10" />
+     <br/><label for="pass">Votre mot de passe : </label><input type="password"name="pass"id="pass"/>
+   </p>
+   <p>
+     <labelfor="ameliorer">Comment pensez-vous que je pourraisaméliorer mon site ?</label><br/><textarea name="ameliorer"id="ameliorer" rows="10"cols="50" >txt</textarea>
+   </p>
+   <p>
+     <input type="email"/>
+     <input type="url"/>
+     <input type="tel"/>
+     <input type="number" min="0" max="10" step="1"/>
+     <input type="range"/>
+     <input type="color"/>
+     <input type="date"/> <!--date, time, week, month, datetime, datetime-local -->
+     <input type="search"/>
+   </p>
+   </fieldset>
+  <br/>
+
+
+   <fieldset> <!-- faire des regroupements-->
+     <legend>Les différents selecteurs</legend><!-- Titre du fieldset -->
+   <p>Cochez les aliments que vous aimez manger :<br/>
+     <input type="checkbox"name="frites"id="frites"checked/><label for="frites">Frites</label>
+     <br/><input type="checkbox"name="steak"id="steak"/><label for="steak">Steak haché</label>
+     <br/><input type="checkbox"name="epinards"id="epinards"/><label for="epinards">Epinards</label>
+     <br/><input type="checkbox"name="huitres"id="huitres"/><label for="huitres">Huitres</label>
+   </p>
+
+   <p>Veuillez indiquer la tranche d'âge dans laquelle vous voussituez :<br/>
+     <input type="radio"name="age"value="moins15"id="moins15"/><label for="moins15">Moins de 15 ans</label>
+     <br/><input type="radio"name="age"value="medium15-25"id="medium15-25"/><label for="medium15-25">15-25 ans</label>
+     <br/><input type="radio"name="age"value="medium25-40"id="medium25-40"/><label for="medium25-40">25-40 ans</label>
+     <br/><input type="radio"name="age"value="plus40"id="plus40"/><label for="plus40">Encore plus vieux que ça ?!</label>
+   </p>
+   <p>
+     <label for="pays">Dans quel pays habitez-vous ?</label><br/>
+     <select name="pays"id="pays">
+       <optgroup label="Europe">
+          <option value="france">France</option>
+          <option value="espagne">Espagne</option>
+          <option value="italie">Italie</option>
+        </optgroup>
+        <optgroup label="Amérique">
+          <option value="canada">Canada</option>
+          <option value="etats-unis">Etats-Unis</option>
+        </optgroup>
+       </select>
+     </p>
+     </fieldset>
+     <br/>
+
+     <fieldset> <!-- faire des regroupements-->
+       <legend>Les différents selecteurs</legend><!-- Titre du fieldset -->
+     <p>
+     <input type="submit" value="Envoyer"/>
+     <input type="reset" value="réinitialiser"/>
+     <input type="image" src="" value="Envoyer"/>
+     <input type="button" value="bouton sans effet"/>
+   </p>
+   </fieldset>
+
+
+  </form>
+ </body>
+</html>

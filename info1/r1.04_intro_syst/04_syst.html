@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>r1.04_intro_syst</title>
+    <meta name="author" content="Maxime Lemoine">
+    <meta name="description" content="Mon abcdaire systeme">
+    <link rel="icon" href="../../images/bookmark.ico">
+
+	<link rel="stylesheet" href="../../style/atom-one-dark.css">
+	<script src="../../style/highlight.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<link rel="stylesheet" href="../../style/style-iut.css">
+  </head>
+
+
+  <body>
+<!--
+NAVIGATION
+-->
+		<nav>
+			<ul>
+				<li><a href="#page_haut"><img src="../../images/chevron-double-up.png"/></a></li>
+				<li><a href="../../main.html"><img src="../../images/home.png"/></a></li>
+				<li><a href="#page_bas"><img src="../../images/chevron-double-down.png"/></a></li>
+			</ul>
+		</nav>
+
+
+<!--
+ENTETE
+-->
+    <h1 id="page_haut">Système</h1>
+    <header id="intro_page">
+		<p>
+        	<b>Auteur :</b> Maxime <br/>
+        	<b>Date création :</b> 17/10/22 <br/>
+            <b>Dernière modification :</b> 17/10/22 <br/>
+        	Département informatique de l'IUT du Havre -
+        	<a href="https://diw.iut.univ-lehavre.fr/pedago/info1/R1_04_Intro_Syst/index.xml" target="_blank">R1.04_Intro_Syst</a>
+      	</p>
+    </header>
+
+
+<!--
+INDEX
+-->
+
+
+    <summary id="index_page"><h2>Index</h2>
+
+		<ul type="square">
+			<li><h4>Abcdaire</h4>
+				<ol type="I">
+					<li><a href="#cmd_abc">ABC</a></li>
+					<li><a href="#cmd_def">DEF</a></li>
+					<li><a href="#cmd_ghi">GHI</a></li>
+					<li><a href="#cmd_jkl">JKL</a></li>
+					<li><a href="#cmd_mno">MNO</a></li>
+					<li><a href="#cmd_pqr">PQR</a></li>
+					<li><a href="#cmd_stu">STU</a></li>
+					<li><a href="#cmd_vwx">VWX</a></li>
+					<li><a href="#cmd_yz">YZ_</a></li>
+				</ol>
+			</li>
+			<li><h4>Général</h4>
+				<ol type="I">
+					<li><a href="#cmd_repertoires">Répertoires</a></li>
+					<li><a href="#cmd_connecteurs">Conecteurs Logiques</a></li>
+				</ol>
+			</li>
+			<li><h4>Métacaractères Shell</h4>
+				<ol type="I">
+					<li><a href="#cmd_ensemble">Désigner un ensemble de fichiers</a></li>
+					<li><a href="#cmd_redirection">Redirections</a></li>
+					<li><a href="#cmd_liaisons">Liaisons</a></li>
+					<li><a href="#cmd_autre">Autre</a></li>
+				</ol>
+			</li>
+			<li><h4>Métacaractères 'grep'</h4>
+				<ol type="I">
+					<li><a href="#cmd_grep">Commande grep</a></li>
+					<li><a href="#cmd_meta">Métacaractères</a></li>
+				</ol>
+			</li>
+			<li><h4>Fichiers et droits</h4>
+				<ol type="I">
+					<li><a href="#cmd_droits">Droits</a></li>
+					<li><a href="#cmd_types">Types</a></li>
+					<li><a href="#cmd_droits_u">Droits utilisateur</a></li>
+					<li><a href="#cmd_droits_g">Droits groupe</a></li>
+					<li><a href="#cmd_droits_a">Droits autre</a></li>
+					<li><a href="#cmd_tab_oct">Tableau octal</a></li>
+					<li><a href="#cmd_umask">Umask</a></li>
+				</ol>
+			</li>
+			<li><h4>Fonctions</h4>
+				<ol type="I">
+					<li><a href="#fun_crea">Creation script</a></li>
+					<li><a href="#fun_para">Paramètre script</a></li>
+					<li><a href="#fun_exec">Rendre exécutable</a></li>
+				</ol>
+			</li>
+			<li><h4>Test</h4>
+				<ol type="I">
+					<li><a href="#test_comparaison">Comparaisons numériques</a></li>
+					<li><a href="#test_fichier">Test de fichiers</a></li>
+				</ol>
+			</li>
+			<li><h4>Variables</h4>
+				<ol type="I">
+					<li><a href="#var_variables">Boucle tant que</a></li>
+					<li><a href="#var_incrementations">Incrémentations</a></li>
+					<li><a href="#var_liste">Liste</a></li>
+				</ol>
+			</li>
+			<li><h4>Boucles Test Parcours</h4>
+				<ol type="I">
+					<li><a href="#bouc_boucle">Boucle tant que</a></li>
+					<li><a href="#bouc_si">Test si sinon</a></li>
+					<li><a href="#bouc_liste">Parcours liste</a></li>
+					<li><a href="#bouc_script">Options script</a></li>
+				</ol>
+			</li>
+			<li><h4>Exemple de script</h4>
+				<ol type="I">
+					<li><a href="#exemple_mini">Minimum dans un script</a></li>
+				</ol>
+			</li>
+	    </ul>
+
+	</summary>
+
+
+<!--
+SYSTEME
+-->
+
+
+    <div id="corps_page"><h2>Système</h2>
+
+        <div class="partie_syst">
+
+			<h3>Abcdaire</h3>
+
+            <h4 id="cmd_abc">ABC</h4>
+            <ul>
+				<li><b>cat</b> : rechercher dans un fichier</li>
+				<li><b>cut -c nb</b> : récupère le nb'ieme caractère d'un mot</li>
+				<li><b>cut -d ' ' -f2,3,4</b> : affiche les mots 2,3 et 4</li>
+				<li><b>chown</b> : changer de group</li>
+				<li><b>chcre</b> : changer de groupe</li>
+				<li><b>chmod</b> : changer les droits</li>
+				<li><b>cd</b> : changer de répertoire</li>
+				<li><b>cp A B</b> : copier un fichier de A vers B</li>
+				<li><b>clear</b> : effacer</li>
+            </ul>
+
+            <h4 id="cmd_def">DEF</h4>
+            <ul>
+				<li><b>df</b> : espace libre sur le disque</li>
+				<li><b>date</b> : afficher et éditer la date</li>
+				<li><b>echo</b> : afficher</li>
+				<li><b>echo -n</b> : affficher toutes les valeurs sur une ligne</li>
+				<li><b>echo -e</b> : afficher et utiliser les \n etc</li>
+				<li><b>find -name</b> : cherche un fichié nommé</li>
+				<li><b>find -iname</b> : cherche un fichié nommé (sans respecter la casse)</li>
+            </ul>
+
+            <h4 id="cmd_ghi">GHI</h4>
+            <ul>
+				<li><b>grep [option, -R] 'recherche' [nom_fichier]</b> : chercher</li>
+				<li><b>grep -l</b> : retourne nom du fichier</li>
+				<li><b>grep -c</b> : nombre de fois</li>
+				<li><b>grep -w Mot</b> : chercher un mot précisément</li>
+				<li><b>history</b> : historique</li>
+				<li><b>host</b> : ?</li>
+				<li><b>head</b> : afficher premier caractère</li>
+				<li><b>ifconfig</b> : ip</li>
+            </ul>
+
+            <h4 id="cmd_jkl">JKL</h4>
+            <ul>
+				<li><b>kill</b> : tuer un processus</li>
+				<li><b>ls -l</b> : afficher les fichiers et infos supplémentaires</li>
+				<li><b>ls -a</b> : afficher les fichiers (même ceux cachés)</li>
+				<li><b>ls -la</b> : afficher les droits</li>
+				<li><u><b>ls/bin | less</b> : afficher toutes les commandes</u></li>
+				<li><b>ln</b> : liens</li>
+				<li><b>less</b> : afficher moins</li>
+            </ul>
+
+            <h4 id="cmd_mno">MNO</h4>
+            <ul>
+				<li><b>man</b> : manuel</li>
+				<li><b>mkdir</b> : creation d'un répertoire</li>
+				<li><b>more</b> : afficher plus</li>
+            </ul>
+
+            <h4 id="cmd_pqr">PQR</h4>
+            <ul>
+				<li><b>ping</b> : ping</li>
+				<li><b>passwd</b> : mots de passes</li>
+				<li><b>printenv</b> : afficher les variables d'environnement</li>
+				<li><b>ps</b> : gestionnaire des taches</li>
+				<li><b>ps -e</b> : montrer tous les processus</li>
+				<li><b>pwd</b> : affiche chemin absolu du repertoire courant</li>
+				<li><b>rmdir</b> : supprimer repertoire</li>
+				<li><b>rm</b> : supprimer fichier</li>
+            </ul>
+
+            <h4 id="cmd_stu">STU</h4>
+            <ul>
+				<li><b>set</b> : définir une variable de position</li>
+				<li><b>sort</b> : trier</li>
+				<li><b>ssh utilisateur@machine</b> : se connecter à distance</li>
+				<li><b>tail</b> : afficher dernier caractère</li>
+				<li><b>tar</b> : compresser dossier</li>
+				<li><b>top (moniteur systeme)</b> : ?</li>
+				<li><b>tr -d "sdqd"</b> : suite de caractère à annuler</li>
+				<li><b>tr -s "aghsqs"</b> : suite des caractères à supprimer en cas de répétition</li>
+				<li><b>tr [:lower:] [:upper:]</b> : transforme les caractères miniscules saisis en majuscule</li>
+				<li><b>umask</b> : fixe le masque actif</li>
+            </ul>
+
+            <h4 id="cmd_vwx">VWX</h4>
+            <ul>
+				<li><b>wc</b> : compter le nombre de mots</li>
+				<li><b>wc -L</b> : compter le nombre de lignes</li>
+				<li><b>who</b> : personnes connectées</li>
+            </ul>
+
+            <h4 id="cmd_yz">YZ_</h4>
+            <ul>
+				<li><b>$PATH</b> : </li>
+				<li><b>$USER</b> : nom de l'utilisateur</li>
+            </ul>
+
+            <h3>Général</h3>
+
+            <h4 id="cmd_repertoires">Repertoires</h4>
+            <ul>
+				<li><b>~</b> : rep utilisateur</li>
+				<li><b>..</b> : rep parent</li>
+				<li><b>.</b> : rep courant</li>
+            </ul>
+
+            <h4 id="cmd_connecteurs">Connecteurs Logiques</h4>
+            <ul>
+            	<li><b>&&</b> / <b>-a</b> : ET</li>
+				<li><b>||</b> / <b>-o</b> : OU</li>
+            </ul>
+
+            <h3>Métacaractères Shell</h3>
+
+            <h4 id="cmd_ensemble">Désigner un ensemble de fichiers</h4>
+            <ul>
+            	<li><b>*</b> : remplace une chaine de longueur quelconque (même vide)</li>
+            	<li><b>?</b> : remplace un seul caractère quelconque</li>
+            	<li><b>[]</b> : un caractère quelconque de la liste</li>
+            	<li><b>[ - ]</b> : un caractère quelconque dans l'intervalle</li>
+            	<li><b>[! ]</b> : n'importe quel caractère sauf ceux de la liste</li>
+            </ul>
+
+            <h4 id="cmd_redirection">Redirections</h4>
+            <ul>
+        		<li>flux entrée : 0, flux sortie : 1, flux messages erreurs : 2 (exemple : commande 2> fichier)</li>
+            	<li><b> > </b> : rediriger la sortie par défault en remplaçant</li>
+            	<li><b> > > </b> : rediriger la sortie par défault en ajoutant</li>
+            	<li><b> < </b> : redirection de l'entrée par défaut</li>
+				<li><b>/dev/null</b> : poubelle</li>
+            </ul>
+
+            <h4 id="cmd_liaisons">Liaisons</h4>
+            <ul>
+            	<li><b> | </b> : permet d'affecter la sortie de la commande à gauche à l'entrée de la commande à droite</li>
+            </ul>
+<pre>
+<code class="bash">
+ls | grep "fich1"
+</code>
+</pre>
+
+            <h4 id="cmd_autre">Autre</h4>
+            <ul>
+            	<li><b>" $ , { } ' ` ( ) \ </b></li>
+            </ul>
+
+            <h3>Métacaractères 'grep'</h3>
+
+            <h4 id="#cmd_grep">commande grep</h4>
+<pre>
+<code class="bash">
+grep [options] 'recherche' [repertoire]
+</code>
+</pre>
+
+            <h4 id="#cmd_meta">metacaractères</h4>
+            <ul>
+            	<li><b>.</b> : caractère quelconque</li>
+            	<li><b>*</b> : répétition quelconque du caractère qui précède</li>
+            	<li><b>^</b> : début de ligne</li>
+            	<li><b>$</b> : fin de ligne</li>
+            	<li><b>\</b> : transforme un caractère en symbole ordinaire</li>
+            	<li><b>{nombre}</b> : répétion du caractère précédent autant de fois qu'indiqué</li>
+            	<li><b>[ ]</b> : caractères entre crochet définis par énumération ou par un intervalle</li>
+            	<li><b>[^ ]</b> : on exclut les caractères se trouvant entre crochets</li>
+            </ul>
+
+            <h3>Fichiers et droits</h3>
+
+            <h4 id="cmd_droits">Droits</h4>
+            <ul>
+				<li><b>r</b> : lecture</li>
+				<li><b>w</b> : modification</li>
+				<li><b>x</b> : executer</li>
+            </ul>
+
+            <h4 id="cmd_types">Types</h4>
+            <ul>
+				<li><b>Répertoire : </b>d _ _ _ _ _ _ _ _ _</li>
+				<li><b>Fichier : </b>- _ _ _ _ _ _ _ _ _</li>
+            </ul>
+
+            <h4 id="cmd_droits_u">Droits utilisateur</h4>
+            <ul>
+				<li><b>chmod [u g o a] [+-=] [r w x]</b> : changer droits</li>
+				<li><b>exemple : </b>_ - - - _ _ _ _ _ _</li>
+            </ul>
+<pre>
+<code class="bash">
+chmod u=rwx, go=r REP
+chmod a+rwx REP
+</code>
+</pre>
+
+            <h4 id="cmd_droits_g">Droits groupe</h4>
+            <ul>
+            	<li><b>exemple : </b>_ _ _ _ - - - _ _ _</li>
+            </ul>
+
+            <h4 id="cmd_droits_a">Droits autre</h4>
+            <ul>
+            	<li><b>exemple : </b>_ _ _ _ _ _ _ - - -</li>
+            </ul>
+
+            <h4 id="cmd_tab_oct">Tableau octal</h4>
+<pre>
+
+Binaire ----- Droit ----- Octal
+000 -------- (---) ------- 0
+001 -------- (--x) ------- 1
+010 -------- (-w-) ------- 2
+011 -------- (-wx) ------- 3
+100 -------- (r--) ------- 4
+101 -------- (r-x) ------- 5
+110 -------- (rw-) ------- 6
+111 -------- (rwx) ------- 7
+
+</pre>
+
+            <h4 id="cmd_umask">Umask</h4>
+            <ul>
+				<li>Droit max pour fichiers : <b>666</b></li>
+				<li>Droit max pour rep : <b>777</b></li>
+				<li>Le masque 026 les droits pour un fichier : 666(8) - 026(8) = 640(8)</li>
+				<li>Le masque 026 les droits pour un rep     : 777(8) - 026(8) = 751(8)</li>
+            </ul>
+
+            <h3>Fonctions</h3>
+
+            <h4 id="fun_crea">Création script</h4>
+            <ul>
+            	<li>Nom : <b>scriptls.sh</b></li>
+            </ul>
+<pre>
+<code class="bash">
+#!/bin/bash
+</code>
+</pre>
+
+            <h4 id="fun_para">Paramètres script</h4>
+            <ul>
+				<li><b>$0</b> : nom du script</li>
+				<li><b>$*</b> : liste des arguments</li>
+				<li><b>$#</b> : nombre d'arguments positionnels (hors $0)</li>
+				<li><b>$?</b> : code de retour de la dernière commande executée (donne 0 si vrai)</li>
+				<li><b>$1</b> : premier argument entré</li>
+				<li><b>$2</b> : deuxieme argument entré</li>
+				<li><b>set</b> : permet de mettre des arguments par défaut</li>
+            </ul>
+
+			<h4 id="fun_exec">Rendre exécutable</h4>
+<pre>
+<code class="bash">
+chmod u+x script
+</code>
+</pre>
+<pre>
+<code class="bash">
+./nom_script.sh
+</code>
+</pre>
+
+            <h3>Test</h3>
+
+            <h4 id="test_comparaison">Comparaions numériques</h4>
+            <ul>
+				<li><b>-eq</b> : est égal à</li>
+				<li><b>-ne</b> : n'est pas égal à</li>
+				<li><b>-gt</b> : est plus grand que</li>
+				<li><b>-ge</b> : est plus grand ou égal à</li>
+				<li><b>-lt</b> : est plus petit que</li>
+				<li><b>-le</b> : est plus petit ou égal à</li>
+            </ul>
+<pre>
+<code class="bash">
+[ "$a" -eq "$b"]
+
+test "$a" -eq "$b"
+</code>
+</pre>
+
+            <h4 id="test_fichier">Test de fichiers</h4>
+            <ul>
+				<li><b>-e</b> : existence du fichier</li>
+				<li><b>-d</b> : répertoire</li>
+				<li><b>-f</b> : fichier normal</li>
+				<li><b>-nt</b> : est plus récent que</li>
+				<li><b>-O</b> : appartient à l'utilisateur</li>
+				<li><b>-r</b> : peut etre lu</li>
+				<li><b>-w</b> : peut etre écrit</li>
+				<li><b>-x</b> : peut etre executé</li>
+            </ul>
+<pre>
+
+[! -d $1 ] si para positionnel n’est pas dossier
+
+</pre>
+
+			<h3>variables</h3>
+
+            <h4 id="var_variables">Variables</h4>
+			<ul>
+				<li><b>var = 5</b> : donner une valeur à une variable</li>
+				<li><b>read var</b> : lire une variable</li>
+				<li><b>echo $var</b> : afficher une variable</li>
+			</ul>
+			<h4 id="var_incrementations">Incrémentations</h4>
+<pre>
+<code class="bash">
+let "var=var+1"
+let "var+=1"
+let "var++"
+
+((var=var+1))
+((var+=1))
+((var++))
+</code>
+</pre>
+
+            <h4 id="var_liste">Liste</h4>
+			<ul>
+				<li><b>'seq 1 $1'</b> : créé une liste de 1 à $1</li>
+			</ul>
+
+			<h3>Boucles Test Parcours</h3>
+
+			<h4 id="bouc_boucle">Boucle tant que</h4>
+<pre>
+<code class="bash">
+while [ condition ]; do
+	action
+done
+
+
+until [ condition ]; do
+	action
+done
+</code>
+</pre>
+
+			<h4 id="bouc_si">Test si sinon</h4>
+<pre>
+<code class="bash">
+if [ condition ]; then
+	action
+else
+	action
+fi
+</code>
+</pre>
+
+			<h4 id="bouc_liste">Parcours liste</h4>
+<pre>
+<code class="bash">
+for variable in liste_valeurs; do
+	action
+done
+
+
+#Parcourir une liste de variables vers la gauche
+while [ $# -ne 0 ]; do
+	action
+	shift
+done
+</code>
+</pre>
+            <h4 id="bouc_script">Options script</h4>
+			<ul>
+				<li><b>exit [1]</b> : arrête le sript</li>
+				<li><b>break</b> : sort de la boucle</li>
+				<li><b>continue</b> : passe</li>
+			</ul>
+
+			<h3>Exemple de script</h3>
+			<h4 id="exemple_mini">Minimum dans un scipt</h4>
+<pre>
+<code class="bass">
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then
+echo "usage : $0 variable d'env"
+exit 1
+fi
+</code>
+</pre>
+
+        </div>
+
+    </div>
+
+
+<!--
+PIED DE PAGE
+-->
+		<footer  id="page_bas">
+
+		</footer>
+
+  </body>
+
+</html>

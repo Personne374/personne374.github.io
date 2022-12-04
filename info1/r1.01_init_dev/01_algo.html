@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+	<head>
+    	<meta charset="utf-8">
+    	<title>r1.01_algo</title>
+    	<meta name="author" content="Maxime Lemoine">
+    	<meta name="description" content="Mon abcdaire du Java en IUT informatique">
+    	<link rel="icon" href="../../images/bookmark.ico">
+
+    	<link rel="stylesheet" href="../../style/atom-one-dark.css">
+    	<script src="../../style/highlight.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+    	<link rel="stylesheet" href="../../style/style-iut.css">
+  	</head>
+
+	<body>
+<!--
+NAVIGATION
+-->
+		<nav>
+			<ul>
+				<li><a href="#page_haut"><img src="../../images/chevron-double-up.png"/></a></li>
+				<li><a href="../../main.html"><img src="../../images/home.png"/></a></li>
+				<li><a href="#page_bas"><img src="../../images/chevron-double-down.png"/></a></li>
+			</ul>
+		</nav>
+
+
+<!--
+ENTETE
+-->
+		<h1 id="page_haut">Abcdaire de l'Algo</h1>
+	    <header id="intro_page">
+	    	<p>
+		        <b>Auteur :</b> Maxime <br/>
+		        <b>Date création :</b> 12/11/22 <br/>
+				<b>Dernière modification :</b> 12/11/22 <br/>
+		        Département informatique de l'IUT du Havre -
+		        <a href="https://diw.iut.univ-lehavre.fr/pedago/info1/R1_01_Init_Dev/index.xml" target="_blank"> R1.01_init_dev</a>
+		        -
+		        <a href="https://diw.iut.univ-lehavre.fr/pedago/info1/R1_01_Init_Dev/ressources/index.xml"  target="_blank"> Ressources</a>
+	    	</p>
+	    </header>
+
+
+<!--
+INDEX
+-->
+
+	    <summary id="index_page"><h2>Index</h2>
+
+		    <ul type="square">
+
+			    <li><h4>structure de base</h4>
+					<ol type="I">
+						<li><a href="#structure-lang">Langages</a></li>
+						<li><a href="#structure-part">Parties</a></li>
+						<li><a href="#structure-donnee">Données</a></li>
+						<li><a href="#structure-interface">Interfaces</a></li>
+					</ol>
+			    </li>
+				<li><h4>Traces</h4>
+					<ol type="I">
+						<li><a href="#trace-exec">Trace d'exécution</a></li>
+						<li><a href="#trace-var">Trace des variables</a></li>
+					</ol>
+			    </li>
+				<li><h4>Conversions</h4>
+					<ol type="I">
+						<li><a href="#conversion-primitive1">Primitives de base</a></li>
+						<li><a href="#conversion-primitive2">Autres primitives</a></li>
+					</ol>
+			    </li>
+				<li><h4>Conventions d'écriture</h4>
+					<ol type="I">
+						<li><a href="#convention-casse">Casse</a></li>
+						<li><a href="#convention-police">Police de caractère</a></li>
+						<li><a href="#convention-indent">Indentation</a></li>
+					</ol>
+			    </li>
+				<li><h4>Algorithme</h4>
+					<ol type="I">
+						<li><a href="#algo-init">Initiation</a></li>
+						<li><a href="#algo-var">Variable</a></li>
+						<li><a href="#algo-cst">Constante</a></li>
+						<li><a href="#algo-affec">Affectation</a></li>
+						<li><a href="#algo-interraction">Interactions</a></li>
+					</ol>
+			    </li>
+				<li><h4>Opérations</h4>
+					<ol type="I">
+						<li><a href="#operation-calcul">Calculs</a></li>
+						<li><a href="#operation-comparaison">Comparaisons</a></li>
+						<li><a href="#operation-operateur">Opérateurs logiques</a></li>
+					</ol>
+			    </li>
+				<li><h4>Structures</h4>
+					<ol type="I">
+						<li><a href="#structure-cond">Conditionnelle</a></li>
+						<li><a href="#structure-alt">Alternative</a></li>
+						<li><a href="#structure-alt-gen">Alternative généralisée</a></li>
+						<li><a href="#structure-iter">Itérative</a></li>
+					</ol>
+			    </li>
+				<li><h4>Sous-Algorithme</h4>
+					<ol type="I">
+						<li><a href="#sous-algo-para">Différents paramètres</a></li>
+						<li><a href="#sous-algo-direction">Paramètres de direction</a></li>
+						<li><a href="#sous-algo-appel">Appeler une fonction</a></li>
+						<li><a href="#sous-algo-exemple">Exemple</a></li>
+					</ol>
+			    </li>
+				<li><h4>Tableaux</h4>
+					<ol type="I">
+						<li><a href="#tableau-dimension1">1 dimension</a></li>
+						<li><a href="#tableau-dimension2">2 dimensions</a></li>
+						<li><a href="#tableau-bloc-init">Bloc Initialisateur</a></li>
+						<li><a href="#tableau-affichage">Affichage</a></li>
+					</ol>
+			    </li>
+
+		    </ul>
+
+		</summary>
+
+<!--
+ALGO
+-->
+
+
+	    <h2>Algorithme</h2>
+
+	    <div id="corps_page">
+
+	        <div class="partie_algo">
+
+	            <h3 id="#">Structure de base</h3>
+
+				<h4 id="structure-lang">Langages</h4>
+				<ul>
+					<li><b>Langage machine : </b>utilisé par le processeur</li>
+					<li><b>Langage informatique : </b>utilisé par l'informaticien</li>
+	            </ul>
+
+				<h4 id="structure-part">Parties</h4>
+				<ul>
+					<li><b>nom</b></li>
+					<li><b>données</b></li>
+					<li><b>corps avec instruction</b></li>
+	            </ul>
+
+				<h4 id="structure-donnee">Données</h4>
+				INSERERE IMAGE SCHEMATIQUE DES DONNEES
+				<ul>
+					<li>Données : <b>entrée, sortie, intermédiaire</b></li>
+					<li>Catégories de données : <b>constante, variable</b></li>
+					<li>Types de données : <b>entier, réel, caractère, chaine de caractère, booléen</b></li>
+	            </ul>
+
+				<h4 id="structure-interface">Interfaces</h4>
+				<ul>
+					<li>Mode console : <b>CUI</b></li>
+					<li>Mode graphique : <b>GUI</b></li>
+	            </ul>
+
+
+				<h3 id="#">Traces</h3>
+
+				<h4 id="trace-exec">Trace d'exécution</h4>
+<pre>
+<code class="txt">
++------+-------+-----+----------+
+|ligne | choix | val | nbAction |
++------+-------+-----+----------+
+|7     |       |10   |          |
+|9     |       |10   |0         |
+|12    |I      |10   |0         |
+|16    |I      |11   |0         |
+|23    |I      |11   |1         |
+|26    |D      |11   |1         |
+|19    |D      |10   |1         |
+|23    |D      |10   |2         |
+|26    |Q      |10   |2         |
++------+-------+-----+----------+
+</code>
+</pre>
+
+				<h4 id="trace-var">Trace des variables</h4>
+<pre>
+<code class="txt">
+valeur initiale : <u><b>10</b></u>
+action (Q/I/D): <u><b>I</b></u>
+action (Q/I/D): <u><b>D</b></u>
+action (Q/I/D): <u><b>Q</b></u>
+10 2
+</code>
+</pre>
+
+
+				<h3 id="#">Convertions</h3>
+
+				<h4 id="conversion-primitive1">Primitives de base</h4>
+				<ul>
+					<li><b>car ( entier ) --> caractère : </b>retourne le caractère correspond à la valeur entière de la table ASCII</li>
+					<li><b>ord ( caractère ) --> entier : </b>retourne la valeur ASCII d'un caractère</li>
+					<li><b>enChaine ( réel ) --> chaine : </b>convertie un réel en Chaine</li>
+					<li><b>enChaine (entier) --> chaine : </b>convertie un entier en Chaine</li>
+					<li><b>enEntier ( chaine ) --> entier : </b>convertie une Chaine en entier</li>
+					<li><b>enRéel ( chaine ) --> réel : </b>convertie une Chaine en réel</li>
+					<li><b>plancher ( réel ) --> entier : </b>retourne la valeur plancher d'un réel</li>
+					<li><b>plafond ( réel ) --> entier : </b>retourne la valeur plafond d'un réel</li>
+					<li><b>arrondi ( réel ) --> entier : </b>retourne la valeur arrondie d'un réel</li>
+	            </ul>
+
+				<h4 id="conversion-primitive2">Autres primitives</h4>
+				<ul>
+					<li><b>aujourdhui() --> chaine : </b>retourne sous forme de chaine la date du jour au format jj/mm/aaaa</li>
+					<li><b>jour(chaine) --> entier : </b>retourne la partie jour d'une chaine (format jj/mm/aaaa)</li>
+					<li><b>mois(chaine) --> entier : </b>retourne la partie mois d'une chaine (format jj/mm/aaaa)</li>
+					<li><b>annee(chaine) --> entier : </b>retourne la partie jour d'une chaine (format jj/mm/aaaa)</li>
+					<li><b>estRéel (chaine ) --> booléen : </b>indique si la chaine peut être convertie en réel</li>
+					<li><b>estEntier (chaine ) --> booléen : </b>indique si la chaine peut être convertie en entier</li>
+					<li><b>hasard (entier) --> entier : </b>retourne une valeur entière prise au hasard sur l'intervalle [0; n[</li>
+	            </ul>
+
+
+				<h3 id="#">Conventions d'écriture</h3>
+
+				<h4 id="convention-casse">Casse</h4>
+				<ul>
+					<li>Nom d'un Algorithme : <b>UpperCamelCase</b></li>
+					<li>Nom d'une CONSTANTE : <b>UPPER_CASE</b></li>
+					<li>Nom d'une variable : <b>lowerCamelCase</b></li>
+					<li>Mot-clé du langage : <b>lowercase</b></li>
+	            </ul>
+
+				<h4 id="convention-police">Police de caractère</h4>
+				<ul>
+					<li><b>police proportionnelle : </b>la largeur des caractères dépend du caractère</li>
+					<li><b>police non-proportionnelle : </b>tous les caractère ont la même largeur</li>
+	            </ul>
+
+				<h4 id="convention-indent">Indentation</h4>
+				<ul>
+					<li><b>Style GNU</b></li>
+					<li><b>Style Whitesmiths</b></li>
+					<li><b>Style Allman</b></li>
+					<li><b>Style K&R</b></li>
+	            </ul>
+<pre>
+<code class="java">
+//style K&R
+if (condition){
+	instruction
+}
+</code>
+</pre>
+<pre>
+<code class="java">
+//style Allmand
+if (condition)
+{
+	instruction
+}
+</code>
+</pre>
+<pre>
+<code class="java">
+//style GNU
+if (condition)
+	{
+		instruction
+	}
+</code>
+</pre>
+
+
+				<h3 id="#">Algorithme</h3>
+
+				<h4 id="algo-init">Initiation</h4>
+<pre>
+<code class="java">
+Algorithme NomAlgo
+constante :
+	...
+variable :
+	...
+
+DEBUT
+	...
+FIN
+</code>
+</pre>
+
+				<h4 id="algo-var">Variable</h4>
+<pre>
+<code class="java">
+variables :
+	var1 : type
+	var2 : type
+</code>
+</pre>
+
+				<h4 id="algo-cst">Constante</h4>
+<pre>
+<code class="java">
+constantes :
+	CONST_1 ← valeur
+	CONST_2 ← valeur
+</code>
+</pre>
+
+				<h4 id="algo-affec">Affectation</h4>
+<pre>
+<code class="java">
+variable ← valeur
+</code>
+</pre>
+
+				<h4 id="algo-interraction">Interactions</h4>
+<pre>
+<code class="java">
+lire ( entree )
+
+écrire ( sortie )
+</code>
+</pre>
+
+				<h3 id="#">Opérations</h3>
+
+				<h4 id="operation-calcul">Calculs</h4>
+				<ul>
+					<li>Addition : <b>+</b></li>
+					<li>Soustraction : <b>-</b></li>
+					<li>Multiplication : <b>×</b></li>
+					<li>Division réelle : <b>/</b></li>
+					<li>Division entière : <b>div</b></li>
+					<li>Reste de la division entière : <b>mod</b></li>
+					<li>Concaténation : <b>©</b></li>
+				</ul>
+
+				<h4 id="operation-comparaison">Comparaisons</h4>
+				<ul>
+					<li>égal à : <b>=</b></li>
+					<li>différent de : <b>≠</b></li>
+					<li>plus grand que : <b>˃</b></li>
+					<li>plus petit que : <b><</b></li>
+					<li>plus grand ou égal à : <b>≥</b></li>
+					<li>plus petit ou égal à : <b>≤</b></li>
+				</ul>
+
+				<h4 id="operation-operateur">Opérateurs logiques</h4>
+				<ul>
+					<li> <b>non</b></li>
+					<li> <b>et</b></li>
+					<li> <b>xou</b></li>
+					<li> <b>ou</b></li>
+				</ul>
+
+
+				<h3 id="#">Structures</h3>
+
+				<h4 id="structure-cond">Conditionnelle</h4>
+<pre>
+<code class="java">
+si condition alors
+|
+|	instructions
+|
+fsi
+</code>
+</pre>
+
+				<h4 id="structure-alt">Alternative</h4>
+<pre>
+<code class="java">
+si condition alors
+|
+|	instructions
+|
+sinon
+|
+|	instructions
+|
+fsi
+</code>
+</pre>
+
+				<h4 id="structure-alt-gen">Alternative généralisée</h4>
+<pre>
+<code class="java">
+selon choix
+|	cas val1 : action1
+|	cas val2 : action2
+|	cas val3 : action3
+fselon
+</code>
+</pre>
+
+				<h4 id="structure-iter">Itérative</h4>
+<pre>
+<code class="java">
+tant que condition faire
+|
+|	instructions
+|
+ftq
+</code>
+</pre>
+<pre>
+<code class="java">
+faire
+|
+|	instructions
+|
+tant que condition
+</code>
+</pre>
+
+
+				<h3 id="#">Sous-Algorithme</h3>
+
+				<h4 id="sous-algo-para">Différents paramètres</h4>
+				<ul>
+					<li><b>Paramètre formel : </b>variable utilisée dans le sous-programme (durée d'exécution)</li>
+					<li><b>Paramètre effectif : </b>variable fournies lors de l'appel du programme (recopié dans un paramètre formel ou en sortie dans une variable)</li>
+				</ul>
+
+				<h4 id="sous-algo-direction">Paramètres de direction</h4>
+				<ul>
+					<li><b>e : </b>sortie</li>
+					<li><b>e/s : </b>entrée/sortie</li>
+					<li><b>s : </b>sortie</li>
+				</ul>
+
+				<h4 id="sous-algo-appel">Appeler une fonction</h4>
+<pre>
+<code class="txt">
+appel fonction(val1, val2)
+
+//avec un retour de valeur
+variable ← appel fonction(val1, val2)
+</code>
+</pre>
+
+				<h4 id="sous-algo-exemple">Exemple</h4>
+<pre>
+<code class="txt">
+Algorithme fonction (e type : nomVar1, e type : nomVar2)
+variable :
+	...
+
+DEBUT
+
+	instructions
+
+	retourne valeur
+
+FIN
+</code>
+</pre>
+
+
+				<h3 id="#">Tableaux</h3>
+
+				<h4 id="tableau-dimension1">1 dimension</h4>
+<pre>
+<code class="java">
+constante :
+	TAILLE ← valeur
+
+variable :
+	tab : tableau[TAILLE] de type
+</code>
+</pre>
+
+				<h4 id="tableau-dimension2">2 dimensions</h4>
+<pre>
+<code class="java">
+constante :
+	TAILLE ← valeur
+
+variable :
+	tab : tableau[TAILLE][TAILLE] de type
+</code>
+</pre>
+
+				<h4 id="tableau-bloc-init">Bloc initialisateur</h4>
+<pre>
+<code class="java">
+tab ← { 1,2,3,4,5,6 }
+tab ← { {1,2,3}, {1,2,3}, {1,2,3} }
+</code>
+</pre>
+
+				<h4 id="tableau-affichage">Affichage</h4>
+<pre>
+<code class="java">
+cptLig ← 0
+tq cptLig < NB_LIGNE faire
+
+	cptCol ← 0
+	tq cptCol < NB_COLONNE faire
+
+		écrire ( tab[cptLig][cptCol] )
+
+		cptCol++
+	ftq
+
+	cptLig++
+ftq
+</code>
+</pre>
+
+
+
+			</div>
+
+		</div>
+
+
+<!--
+PIED DE PAGE
+-->
+	   <footer  id="page_bas">
+
+	   </footer>
+
+   </body>
+</html>

@@ -1,0 +1,227 @@
+/*
+Dégradé de couleur : #452E3A, #896F63, #A3906E, #D3BD81, #DEBC67
+*/
+/*
+bleu : #525DC6, rouge : #F24626, gris :#B1C0BF, gris foncé : #1e2933
+*/
+/*
+https://believemy.com/r/faire-de-la-coloration-syntaxique-avec-html-et-css
+*/
+
+
+
+
+/*Sur tous les éléments de base*/
+*   {
+    color:#452E3A;
+}
+
+
+
+
+/*page entiere*/
+body    {
+    padding-left: 2%; /*5em de base*/
+    padding-right: 2%; /*5em de base*/
+    background-color: white;
+}
+
+
+
+
+/*Barre de navigation*/
+nav {
+    opacity: 0.6;
+    position:fixed;
+    right:0;
+    top:0;
+}
+nav > ul    {
+    list-style-type: none;
+    opacity: 0.9;
+}
+nav > ul > li   {
+    display: inline-block;
+}
+nav > ul > li a {
+	text-align: center;
+	color : #000;
+	text-decoration: none;
+}
+nav > ul > li > a > img {
+    margin: 8px;
+    height: 50px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+}
+nav > ul > li > a > img:hover   {
+	background-color: #555;
+	color : white;
+}
+
+
+
+
+/*Entête de page*/
+#intro_page {
+    margin-top: 1em;
+    background-color: #DEBC67;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: 0px 0px 10px #DEBC67 ;
+}
+#intro_page *   {
+    font-family: arial;
+    background-color:#DEBC67;
+}
+
+
+
+
+/*Sommaire*/
+summary {
+    font-family: arial;
+}
+
+
+
+
+/*Bas de page*/
+footer  {
+    padding-bottom: 75px;
+}
+
+
+
+
+/*corps de page*/
+#corps_page > * > ul    {
+    font-family: monospace;
+    font-size: 1.1em;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /*border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;*/
+}
+#corps_page > * > p    {
+    background-color: #DEBC67;
+    font-family: arial;
+    font-size: 1em;
+    padding: 15px;
+    padding-bottom: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /*border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;*/
+}
+#corps_page > * > ul > li   {
+    padding: 0.2em;
+    font-family: monospace;
+    font-size: 1.1em;
+    background-color: #DEBC67;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+#corps_page > .partie_java > ul {
+    background-color: #4752c4;
+}
+#corps_page > .partie_algo > ul {
+    background-color: #4752c4;
+}
+#corps_page > .partie_html > ul {
+    background-color: #F24626;
+}
+#corps_page > .partie_css > ul  {
+    background-color: #525DC6;
+}
+#corps_page > .partie_syst > ul {
+    background-color: #283036;
+}
+#corps_page > .partie_bd > ul {
+    background-color: #137748;
+}
+#corps_page > .partie_caracteres > ul {
+    background-color: #A438D6;
+}
+
+
+
+
+/*section de code*/
+pre {
+    border-radius: 10px;
+    background-color: #282c34;
+    border-color: #896F63;
+    border-width: 5px;
+    border-style: inset;
+    color: white;
+    font-size: 1.2em;
+    font-family: monospace;
+    margin-right: 10%;
+}
+pre:hover   {
+    border-color: #ff4754;
+    border-style: outset;
+}
+.hljs   { /*fonctionne avec le java et css ajouté*/
+}
+.hljs:hover {
+}
+
+
+
+
+/*éléments de la page*/
+b   {
+    font-family: monospace;
+    font-weight: bold;
+}
+img {
+    height: 10em;
+    float:right;
+    margin-right: 65%;
+}
+ol > li {
+    color:black;
+    font-family: arial;
+}
+a   {
+    color:#452EEF;
+}
+
+
+
+
+/*Titres et sous titres*/
+h1  {
+    font-size: 2.2em;
+    color:#DEBC67;
+    font-family: verdana;
+    text-align: center;
+    text-decoration: underline overline;
+    text-shadow: 1px 1px 2px #452E3A;
+    margin-top: 1em;
+}
+h2  {
+    font-size: 1.6em;
+    color:#D3BD81;
+    font-family: verdana;
+    text-decoration: underline;
+    text-shadow: 1px 1px 2px #452E3A;
+    margin-top: 2em;
+}
+h3  {
+    font-size: 1.4em;
+    color:#A3906E;
+    font-family: verdana;
+    margin-top: 2em;
+    text-indent: 1em;
+    text-decoration: underline;
+}
+h4  {
+    font-size: 1em;
+    color:#896F63;
+    font-family: verdana;
+}

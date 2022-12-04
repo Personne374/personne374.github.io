@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>r1.05_bd</title>
+	    <meta name="author" content="Maxime Lemoine">
+	    <meta name="description" content="Mon abcdaire de bado">
+	    <link rel="icon" href="../../images/bookmark.ico">
+		<link rel="stylesheet" href="../../style/atom-one-dark.css">
+		<script src="../../style/highlight.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+	    <link rel="stylesheet" href="../../style/style-iut.css">
+	</head>
+
+
+	<body>
+<!--
+NAVIGATION
+-->
+		<nav>
+			<ul>
+				<li><a href="#page_haut"><img src="../../images/chevron-double-up.png"/></a></li>
+				<li><a href="../../main.html"><img src="../../images/home.png"/></a></li>
+				<li><a href="#page_bas"><img src="../../images/chevron-double-down.png"/></a></li>
+			</ul>
+		</nav>
+
+
+<!--
+ENTETE
+-->
+		<h1 id="page_haut">Base de données</h1>
+	    <header id="intro_page">
+			<p>
+	        <b>Auteur :</b> Maxime <br/>
+	        <b>Date création :</b> 12/11/22 <br/>
+			<b>Dernière modification :</b> 12/11/22<br/>
+	        Département informatique de l'IUT du Havre -
+	        <a href="https://diw.iut.univ-lehavre.fr/pedago/info1/R1_05_BD1/indexV4.xml" target="_blank"> R1_05_BD</a>
+	      	</p>
+	    </header>
+
+<!--
+INDEX
+-->
+
+		<summary id="index_page"><h2>Index</h2>
+			<ul type="square">
+
+				<li><h4>Introduction</h4>
+					<ol type="I">
+                        <li><a href="#intro-connexion">Connexion à postgressql</a></li>
+                        <li><a href="#intro-def">Définition</a></li>
+                        <li><a href="#intro-com">Commentaire</a></li>
+                        <li><a href="#intro-cle">Clé</a></li>
+					</ol>
+				</li>
+
+				<li><h4>Requête</h4>
+					<ol type="I">
+						<li><a href="#requete-simple">Requête simple</a></li>
+                        <li><a href="#requete-restriction">Restriction</a></li>
+                        <li><a href="#requete-trie">Trie des tuples</a></li>
+                        <li><a href="#requete-suppression">Suppression de répétition</a></li>
+                        <li><a href="#requete-compter">Compter le nombre de tuples</a></li>
+                        <li><a href="#requete-renommer">Renommer</a></li>
+                        <li><a href="#requete-multi">Requêtes multi-tables</a></li>
+                        <li><a href="#requete-fonction">Fonction</a></li>
+
+					</ol>
+				</li>
+
+				<li><h4>Création</h4>
+					<ol type="I">
+                        <li><a href="#creation-lmd">Langage de manipulation de données (LMD)</a></li>
+                        <li><a href="#creation-ldd">Langage de description de données (LDD)</a></li>
+					</ol>
+				</li>
+
+			</ul>
+		</summary>
+
+
+<!--
+BADO
+-->
+
+        <div id="corps_page"><h2>Bado</h2>
+
+            <div class="partie_bd">
+
+                <h3>Introduction</h3>
+
+                <h4 id="intro-connexion">Connexion à postgressql</h4>
+                <p>Dans le terminal 1 : Edition des fichiers dans Corton</p>
+<pre>
+<code class="bash">
+cd ...MEN/TP1
+
+gedit Q1.sql &
+
+exit
+</code>
+</pre>
+                <br>
+                <p>Dans le terminal 2 : Connexion à Woody</p>
+<pre>
+<code class="bash">
+cd ...MEN/TP1
+
+psql -h woody -d LOGIN -U LOGIN
+
+"mdp de postgres"
+
+\i Q1.sql
+
+\q
+exit
+</code>
+</pre>
+
+                <h4 id="intro-def">Définition</h4>
+                <p>Bases de données :  ensemble de données structuré/organisé non redondantes dont l'organisation est régie par un modèle de données.</p>
+                <p>SGBD : Système de Gestion des Bases de Données (exemple : postgressql)</p>
+
+                <h4 id="intro-com">Commentaire</h4>
+<pre>
+<code class="sql">
+-- une ligne de commentaire
+/* plusieurs lignes */
+</code>
+</pre>
+
+                <h4 id="intro-cle">Clé</h4>
+                <p>Clé primaire : identifiant unique dans la table (exemple : netud ; netud/nmat)</p>
+                <p>Clé étrangère : clé primaire d'une table utilisée dans un autre comme clé primaire</p>
+
+
+                <h3>Requête</h3>
+
+                <h4 id="requete-simple">Requête simple</h4>
+                <p>Reqête simple</p>
+<pre>
+<code class="sql">
+Select  elementaafficher
+From    Table;
+</code>
+</pre>
+
+                <br>
+                <p>Afficher plusieurs colonnes</p>
+<pre>
+<code class="sql">
+Select  attribut1, attribut2, ..., attributn
+From    Table;
+</code>
+</pre>
+
+                <br>
+                <p>Afficher tout : * </p>
+
+                <h4 id="requete-restriction">Restriction</h4>
+                <p>Restriction</p>
+<pre>
+<code class="sql">
+Select  attribut
+From    Table
+Where   attributx = condition;
+</code>
+</pre>
+
+                <br>
+				<ul>
+					<li>Elements logiques :</li>
+					<li>Not</li>
+					<li>And</li>
+					<li>Or</li>
+				</ul>
+
+                <br>
+                <p>Comparaison à un intervalle</p>
+<pre>
+<code class="sql">
+Select  attribut1
+From    Table
+Where   attributx between A and B;
+</table>
+</code>
+</pre>
+
+                <br>
+                <p>Comparaison à un ensemble</p>
+<pre>
+<code class="sql">
+Select  attribut1
+From    Table
+Where   attributx In ( ensemble, ... );
+</code>
+</pre>
+
+                <br>
+                <p>Comparaison à un filtre</p>
+<pre>
+<code class="sql">
+Select  attribut1
+From    Table
+Where   attributx Like 'filtre';
+</code>
+</pre>
+
+                <br>
+                <p>Filtre sur les chaines de caractère</p>
+                <ul>
+                    <li><b>%</b> : n'importe quelle suite de caractère</li>
+                    <li><b>_</b> : un caractère quelconque</li>
+                </ul>
+
+                <br>
+                <p>Valeur indéfinie</p>
+<pre>
+<code class="sql">
+Select  *
+From    Table
+Where   attributx Is Null;
+</code>
+</pre>
+
+
+                <h4 id="requete-trie">Trie des tuples</h4>
+
+                <p>Trie</p>
+                <ul>
+                    <li><b>ASC</b> : trie par ordre croissant (par défaut)</li>
+                    <li><b>DESC</b> : trie par ordre décroissant</li>
+                </ul>
+<pre>
+<code class="sql">
+Select  attribut1
+From    Table
+Orderby attribut1 ASC;
+</code>
+</pre>
+
+
+                <h4 id="requete-suppression">Suppression de répétition</h4>
+                <p>Eliminer les répétitions</p>
+<pre>
+<code class="sql">
+Select Distinct attribut1
+From    Table;
+</code>
+</pre>
+
+
+                <h4 id="requete-compterrequete-renommer">Compter nombre de tuples</h4>
+                <p>Compter</p>
+<pre>
+<code class="sql">
+Select  count( attribut1 )
+From    Table;
+</code>
+</pre>
+
+                <br>
+                <p>Compter nombre d'enregistrements distincts</p>
+<pre>
+<code class="sql">
+Select  count( Distinct attribut1 )
+From    Table;
+</code>
+</pre>
+
+
+                <h4 id="requete-renommer">Renommer</h4>
+                <p>Renommer colonnes</p>
+<pre>
+<code class="sql">
+Select  attribut1 as "title"
+From    Table;
+</code>
+</pre>
+
+                <br>
+                <p>Renommer tables</p>
+<pre>
+<code class="sql">
+Select  attribut1
+From    Table newname;
+
+Select  attribut1
+From    Table as newname;
+</code>
+</pre>
+
+                <br>
+                <p>Préfixage d'un nom d'attribut</p>
+<pre>
+<code class="sql">
+Select  t.attribut1, t.attribut2
+From    Table as t;
+</code>
+</pre>
+
+
+                <h4 id="requete-multi">Requête multi-tables</h4>
+                <p>Produit Cartésien</p>
+<pre>
+<code class="sql">
+Select  attribut1, attribut2...
+From    Table1, Table2...;
+</code>
+</pre>
+
+                <br>
+                <p>Produit Cartésien</p>
+<pre>
+<code class="sql">
+Select  attribut1, attribut2...
+From    Table1, Table2...;
+</code>
+</pre>
+
+                <br>
+                <p>Jointure</p>
+<pre>
+<code class="sql">
+Select  attributs...
+From    Tables...
+Where   conditions-jointure [And
+        autres conditions];
+
+Select  attributs
+From    Table Join Table On conditions-Jointure
+[Where  autres-conditions];
+</code>
+</pre>
+
+                <br>
+                <p>Equi-jointure : la conidition de jointure est une égalité</p>
+<pre>
+<code class="sql">
+Select  att, att2...
+From    Table1, Table2...
+Where   Table1.attx = Table2.attx;
+</code>
+</pre>
+
+                <br>
+                <p>Jointure Naturelle : jointure entre les attributs identiques</p>
+<pre>
+<code class="sql">
+Select  att, att2...
+From    Table1 NaturalJoin Table2...
+</code>
+</pre>
+
+                <br>
+                <p>Auto-Jointure : jointure d'une table avec elle même</p>
+<pre>
+<code class="sql">
+Select  m.att1
+From    Table m Join Table n On m.att2 = n.att2;
+</code>
+</pre>
+
+<br>
+<p>Thêta-jointure : jointure qui n'est pas une égalité (Q : !=  <  >  <=  =>  like...)</p>
+<pre>
+<code class="sql">
+Select  att1, att2...
+From    Table1 Join Table2 on Table1.attx Q Table2.attx;
+</code>
+</pre>
+
+                <br>
+                <p>Union : concaténer les résultats</p>
+<pre>
+<code class="sql">
+Select  *
+From    Table1
+
+Union
+
+Select  *
+From    Table2;
+</code>
+</pre>
+
+                <br>
+                <p>Intersect : obtenir l'intersection des requêtes</p>
+<pre>
+<code class="sql">
+Select  *
+From    Table1
+
+Intersect
+
+Select  *
+From    Table2;
+</code>
+</pre>
+
+                <br>
+                <p>Except : exclure les résultats de la 2e table</p>
+<pre>
+<code class="sql">
+Select  *
+From    Table1
+
+Except
+
+Select  *
+From    Table2
+Where   conditions-exclusion;
+</code>
+</pre>
+
+                <br>
+                <p>Imbrication des requêtes ( Q : =  >  <  <=  =>  !=  In  Not In...)</p>
+<pre>
+<code class="sql">
+Select  attributs
+From    Table
+Where   attributx Q (Select attribut From Table Where conditions);
+</code>
+</pre>
+
+
+                <h4 id="requete-fonction">Fonctions</h4>
+                <p>SOMME, MOYENNE, MAX, MIN (fonctions : SUM()  AVG()  MAX()  MIN() )</p>
+<pre>
+<code class="sql">
+Select  fonction( attribut )
+From    Table;
+</code>
+</pre>
+
+				<h3>Création</h3>
+
+				<h4 id="creation-lmd">Langage de manipulation de données (LMD)</h4>
+
+				<p>Insérer un tuple complètement spécifié</p>
+<pre>
+<code class="sql">
+Insert Into Table Values (val1, ..., valn);
+</code>
+</pre>
+
+				<br>
+				<p>Insérer un tuple partiellement spécifié</p>
+<pre>
+<code class="sql">
+Insert Into Table (liste_attributs) Values (val1, ..., valn);
+</code>
+</pre>
+
+				<br>
+				<p>Insérer plusieurs tuples à la fois</p>
+<pre>
+<code class="sql">
+Insert	Into Table (liste_attributs)
+Values	(vala, ..., valn)
+		(valb, ..., valn)
+		(valc, ..., valn)
+		(vald, ..., valn);
+</code>
+</pre>
+
+				<br>
+				<p>Supprimer un ou plusieurs tuples</p>
+<pre>
+<code class="sql">
+Delete	From <table>
+[Where	condition];
+</table>
+</code>
+</pre>
+
+				<br>
+				<p>Modifier une valeur d'un ou plusieurs tuples</p>
+<pre>
+<code class="sql">
+Update	Table
+Set		nom_colonne1 = 'nouvelle_valeur'
+[Where	condition];
+</code>
+</pre>
+
+				<br>
+				<p>Modifier des valeurs d'un ou plusieurs tuples</p>
+<pre>
+<code class="sql">
+Update	Table
+Set		colonne1 = 'val1', colonne2 = 'val2'
+[Where condition];
+</code>
+</pre>
+
+
+				<h4 id="creation-ldd">Langage de description de données (LDD)</h4>
+
+				<p>Ajouter une colonne</p>
+<pre>
+<code class="sql">
+Alter Table	Table
+Add			nom_colonne type_donnees;
+</code>
+</pre>
+
+				<br>
+				<p>Supprimer une colonne</p>
+<pre>
+<code class="sql">
+Alter Table	Table
+Drop Column	nom_colonne;
+</code>
+</pre>
+
+				<br>
+				<p>Modifier une colonne</p>
+<pre>
+<code class="sql">
+Alter Table	Table
+Drop Column	nom_colonne
+Type		type_donnees;
+</code>
+</pre>
+
+				<br>
+				<p>Renommer une colonne</p>
+<pre>
+<code class="sql">
+Alter Table		Table
+Rename Column	nom_colonne To
+				nouveau_nom;
+</code>
+</pre>
+
+				<br>
+				<p>Supprimer une table d'une base de données</p>
+<pre>
+<code class="sql">
+Drop Table	Table;
+/*Il faut supprimer avant les tables dépendantes (clé étrangères)*/
+</code>
+</pre>
+
+				<br>
+				<p>Créer une table</p>
+<pre>
+<code class="sql">
+Create Table	Table
+	(col1 type_donnees,
+	 col2 type_donnees,
+	 ...
+	 coln type_donnees);
+</code>
+</pre>
+				<ul>
+					<li>On peut aussi définir des options :</li>
+					<li><b>Not Null</b> : la colonne ne peut pas avoir de valeur nulle</li>
+					<li><b>Default</b> : attribut par défaut</li>
+					<li><b>Primary Key</b> : indiquer si la colonne est une clé primaire</li>
+					<li><b>References</b> : indiquer les contraines de référence</li>
+					<li>...</li>
+				</ul>
+
+				<br>
+				<p>Créer une base de données SQL</p>
+<pre>
+<code class="sql">
+Create Database	nom_base_donnees
+</code>
+</pre>
+
+				<br>
+				<p>Supprimer une base de données</p>
+<pre>
+<code class="sql">
+Drop Database	nom_base_donnees
+</code>
+</pre>
+				<ul>
+					<li>Les types de données : </li>
+					<li><b>Int</b> : entier</li>
+					<li><b>Varchar</b> : petite chaine de caractère</li>
+					<li><b>Text</b> : texte</li>
+					<li><b>Date</b> : date</li>
+					<li>...</li>
+				</ul>
+
+
+            </div>
+
+        </div>
+
+
+<!--
+PIED DE PAGE
+-->
+		<footer  id="page_bas">
+
+		</footer>
+
+	</body>
+</html>

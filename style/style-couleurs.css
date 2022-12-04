@@ -1,0 +1,73 @@
+/*tableau des couleurs*/
+table   {
+    border-width: 2px;
+    border-color: #000080;
+    border-style: solid;
+    width: 50%;
+}
+tbody   {
+    background-color: #C0C0FF;
+}
+th  {
+    background-color: #C0C0C0;
+}
+td  {
+    width: 25%;
+}
+caption {
+    font-size: 1.2em;
+    caption-side: bottom;
+}
+
+
+
+
+/*Les différentes couleurs*/
+.blanc   {
+    background-color: #FFFFFF ;
+}
+.bleu   {
+    background-color: #0000FF ;
+}
+.bleu_f  {
+    background-color: #000080 ;
+}
+.bleu_v  {
+    background-color: #008080 ;
+}
+.cyan    {
+    background-color: #00FFFF ;
+}
+.gris_c  {
+    background-color: #C0C0C0 ;
+}
+.gris_f  {
+    background-color: #808080 ;
+}
+.jaune   {
+    background-color: #FFFF00 ;
+}
+.marron  {
+    background-color: #800000 ;
+}
+.noir    {
+    background-color: #000000 ;
+}
+.rose    {
+    background-color: #FF00FF ;
+}
+.rouge    {
+    background-color: #FF0000 ;
+}
+.vert    {
+    background-color: #008000 ;
+}
+.vert_b    {
+    background-color: #00FF00 ;
+}
+.vert_o    {
+    background-color: #808000 ;
+}
+.violet    {
+    background-color: #800080 ;
+}

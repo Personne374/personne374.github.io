@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+	<head>
+    	<meta charset="utf-8">
+    	<title>r1.01_init_dev</title>
+    	<meta name="author" content="Maxime Lemoine">
+    	<meta name="description" content="Mon abcdaire du Java en IUT informatique">
+    	<link rel="icon" href="../../images/bookmark.ico">
+
+    	<link rel="stylesheet" href="../../style/atom-one-dark.css">
+    	<script src="../../style/highlight.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+    	<link rel="stylesheet" href="../../style/style-iut.css">
+  	</head>
+
+	<body>
+<!--
+NAVIGATION
+-->
+		<nav>
+			<ul>
+				<li><a href="#page_haut"><img src="../../images/chevron-double-up.png"/></a></li>
+				<li><a href="../../main.html"><img src="../../images/home.png"/></a></li>
+				<li><a href="#page_bas"><img src="../../images/chevron-double-down.png"/></a></li>
+			</ul>
+		</nav>
+
+
+<!--
+ENTETE
+-->
+		<h1 id="page_haut">Abcdaire du Java</h1>
+	    <header id="intro_page">
+	    	<p>
+		        <b>Auteur :</b> Maxime <br/>
+		        <b>Date création :</b> 16/10/22 <br/>
+				<b>Dernière modification :</b> 11/11/22 <br/>
+		        Département informatique de l'IUT du Havre -
+		        <a href="https://diw.iut.univ-lehavre.fr/pedago/info1/R1_01_Init_Dev/index.xml" target="_blank"> R1.01_init_dev</a>
+		        -
+		        <a href="https://diw.iut.univ-lehavre.fr/pedago/info1/R1_01_Init_Dev/ressources/index.xml"  target="_blank"> Ressources</a>
+	    	</p>
+	    </header>
+
+
+<!--
+INDEX
+-->
+
+	    <summary id="index_page"><h2>Index</h2>
+
+		    <ul type="square">
+
+			    <li><h4>JAVA</h4>
+					<ol type="I">
+						<li><a href="#si-sinon">Si sinon</a></li>
+						<li><a href="#selon-cas">Selon cas</a></li>
+						<li><a href="#tant-que">Boucle tant que</a></li>
+						<li><a href="#entrees">Entrées</a></li>
+						<li><a href="#sorties">Sorties</a></li>
+					</ol>
+			    </li>
+			    <li><h4>Fonctions</h4>
+					<ol type="I">
+						<li><a href="#creer-fonction">Créer une fonction</a></li>
+						<li><a href="#appeler-fonction">Appeler une fonction</a></li>
+						<li><a href="#argument-fonction">Arguments de la fonction "main"</a></li>
+					</ol>
+			    </li>
+			    <li><h4>Types</h4>
+					<ol type="I">
+						<li><a href="#constante">Constante</a></li>
+						<li><a href="#variable">Variable</a></li>
+						<li><a href="#convertir">Convertion dans un type</a></li>
+						<li><a href="#types">Différents types</a></li>
+			      </ol>
+			    </li>
+			    <li><h4>Conditions et Opérateurs</h4>
+					<ol type="I">
+						<li><a href="#conditions">condition</a></li>
+						<li><a href="#operateurs">opérateurs</a></li>
+					</ol>
+			    </li>
+			    <li><h4>Les chaines de caractères</h4>
+					<ol type="I">
+						<li><a href="#string-lire">Lire</a></li>
+						<li><a href="#string-convertion">Convertion</a></li>
+						<li><a href="#string-tester">Tester une chaine</a></li>
+						<li><a href="#string-compter">Compter les caracères</a></li>
+						<li><a href="#string-abc">Analyser les caractères</a></li>
+					</ol>
+			    </li>
+				<li><h4>Tableaux</h4>
+					<ol type="I">
+						<li><a href="#table-def">Définition d'un tableau</a></li>
+						<li><a href="#table-init">Initiation</a></li>
+						<li><a href="#table-element">Element</a></li>
+						<li><a href="#table-dimension">Dimension</a></li>
+					</ol>
+				</li>
+				<li><h4>Maths</h4>
+					<ol type="I">
+						<li><a href="#maths-alea">Aléatoire</a></li>
+						<li><a href="#maths-calculs">Calculs</a></li>
+					</ol>
+			    </li>
+			    <li><h4>Dessin</h4>
+					<ol type="I">
+						<li><a href="#ct-controle">ControleGraphique</a></li>
+						<li><a href="#ct-init">Initialisation zone</a></li>
+						<li><a href="#ct-couleur">Couleur stylo</a></li>
+						<li><a href="#ct-formes">Formes</a></li>
+					</ol>
+			    </li>
+			    <li><h4>Exemples</h4>
+					<ol type="I">
+						<li><a href="#java-simple">Algorithme simple Java</a></li>
+					</ol>
+			    </li>
+
+		    </ul>
+
+		</summary>
+
+<!--
+JAVA
+-->
+
+	    <h2>Abcdaire</h2>
+
+	    <div id="corps_page">
+
+	        <div class="partie_java">
+
+	            <h3 id="#">Java</h3>
+
+	            <h4 id="si-sinon">Si Sinon</h4>
+<pre>
+<code class="java">
+if ( condition )
+{
+	 action du si;
+}
+else
+{
+	 action du sinon;
+}
+</code>
+</pre>
+
+	            <h4 id="selon-cas">Selon cas</h4>
+<pre>
+<code class="java">
+switch( valeurTest )
+{
+	 case 1 -> var = "reponse 1";
+	 case 2 -> var = "reponse 2";
+	 default -> var = "reponse par default";
+}
+</code>
+</pre>
+
+	            <h4>Selon cas avec égalité</h4>
+<pre>
+<code class="java">
+valRep =
+switch( valeurTest )
+{
+	 case 1 -> "reponse 1";
+	 case 2 -> "reponse 2";
+	 default -> "reponse par default";
+};
+</code>
+</pre>
+
+	            <h4 id="tant-que">Boucle tant que</h4>
+<pre>
+<code class="java">
+while (condition)
+{
+	 action a repeter;
+}
+</code>
+</pre>
+
+	            <h4>Boucle faire tant que</h4>
+<pre>
+<code class="java">
+do
+{
+    action a repeter;
+}while ( condition );
+</code>
+</pre>
+
+	            <h4 id="entrees">Entrées</h4>
+<pre>
+<code class="java">
+entree1 = Clavier.lire_int();
+entree2 = Clavier.lireString();
+</code>
+</pre>
+
+	            <h4 id="sorties">Sorties</h4>
+<pre>
+<code class="java">
+System.out.print("Sortie sans retour à la ligne");
+System.out.println("Sortie AVEC retour à la ligne");
+</code>
+</pre>
+
+	            <h3>Fonctions</h3>
+
+	            <h4 id="creer-fonction">Créer une fonction (dans la fonction main)</h4>
+<pre>
+<code class="java">
+private static typeFonction nomFonction(int A, int B, char C)
+{
+	 fonction avec parametres : A, B, C;
+}
+</code>
+</pre>
+
+	            <h4 id="appeler-fonction">Appeler une fonction</h4>
+<pre>
+<code class="java">
+IndexEtPouce.nomFonction ( entreeA, entreeB, entreeC);
+</code>
+</pre>
+
+	            <h4 id="argument-fonction">Récupérer arguments fonction de "java *.java"</h4>
+<pre>
+<code class="java">
+public static void main(String[] arguments)
+{
+    premierArgument = arguments[0];
+}
+</code>
+</pre>
+
+	            <h3>Types</h3>
+
+	            <h4 id="constante">Constante</h4>
+<pre>
+<code class="java">
+final int CONSTANTE = 0;
+</code>
+</pre>
+
+	            <h4 id="variable">Variable</h4>
+<pre>
+<code class="java">
+int entree;
+String sortie;
+</code>
+</pre>
+
+	            <h4 id="convertir">Convertir dans un type</h4>
+<pre>
+<code class="java">
+unEntier = (int)(unDouble);
+</code>
+</pre>
+
+	            <h4 id="types">Types</h4>
+	            <ul>
+					<li>Entier : <b>int</b></li>
+					<li>Booléen : <b>boolean</b></li>
+					<li>Flottant : <b>float</b></li>
+					<li>Long : <b>long</b></li>
+					<li>Court : <b>short</b></li>
+					<li>Double : <b>double</b></li>
+					<li>Chaine de caractère : <b>String</b></li>
+					<li>Caractère : <b>char</b></li>
+	            </ul>
+
+	            <h3>Conditions et Opérateurs</h3>
+
+				<h4 id="conditions">Conditions</h4>
+	            <ul>
+	                <li>Et : <b>&&</b></li>
+	                <li>Ou : <b>||</b></li>
+	                <li>Xou : <b>^</b></li>
+	                <li>Non : <b>!</b></li>
+	                <li>Equivalence : <b>==</b></li>
+	                <li>Inégalité : <b>< ></b></li>
+	            </ul>
+
+	            <h4 id="operateurs">Opérateurs</h3>
+	            <ul>
+	                <li>Addition : <b>+</b></li>
+	                <li>Soustraction : <b>-</b></li>
+	                <li>Multiplication : <b>*</b></li>
+	                <li>Division : <b>/ .0</b></li>
+	                <li>Modulo : <b>%</b></li>
+	                <li>Division entière : <b>/</b></li>
+	            </ul>
+
+            	<h3>Les chaines de caractères</h3>
+
+            	<h4 id="string-lire">Lire</h4>
+
+<pre>
+<code class="java">
+Clavier.lireString();
+</code>
+</pre>
+
+            	<h4 id="string-convertion">Convertion</h4>
+<pre>
+<code class="java">
+chiffre = Integer.parseInt ( "54" );
+</code>
+</pre>
+
+            	<h4 id="string-tester">Tester une chaine</h4>
+<pre>
+<code class="java">
+texte = "bonjour";
+if ( texte.equals("bonjour") ) {}
+</code>
+</pre>
+
+				<h4 id="string-compter">Analyser les caractères</h4>
+<pre>
+<code class="java">
+//n-ieme lettre de la phrase (commence par 0)
+phrase.charAt( n );
+
+//longueur de la phrase
+phrase.length();
+</code>
+</pre>
+
+				<h4 id="string-abc">Additionner les caractères</h4>
+<pre>
+<code class="java">
+//avoir la (n+1)-ième lettre de l'alphabet
+lettre = (char) ('A' + n)
+</code>
+</pre>
+
+				<h3>Tableaux</h3>
+				<h4 id="table-def">Définition d'un tableau</h4>
+<pre>
+<code class="java">
+type[][] nomTableau;
+</code>
+</pre>
+
+				<h4 id="table-init">Initiation</h4>
+<pre>
+<code class="java">
+nomTableau = new type[TAILLE][TAILLE];
+</code>
+</pre>
+
+				<h4 id="table-element">Element</h4>
+<pre>
+<code class="java">
+nomTableau[ indice ][ indice ];
+</code>
+</pre>
+
+				<h4 id="table-dimension">Dimension</h4>
+<pre>
+<code class="java">
+//longueur du tableau
+nomTableau.length;
+
+//hauteur du tableau
+nomTableau[ indice ].lenght;
+</code>
+</pre>
+
+				<h3>Maths</h3>
+				<h4 id="maths-alea">Aléatoire</h4>
+<pre>
+<code class="java">
+// Tirage aléatoire d'un nombre dans l'intervalle [0;100[
+nombre = (int)( Math.random() * 100 );
+</code>
+</pre>
+
+				<h4 id="maths-calculs">calculs</h4>
+				<ul>
+					<li>Puissance : <b>Math.pow(x,n)</b></li>
+					<li>Racine carrée : <b>Math.sqrt(x)</b></li>
+				</ul>
+
+            	<h3>Dessin</h3>
+            	<h4 id="ct-controle">ControleGraphique</h4>
+<pre>
+<code class="java">
+ControleGraphique ct;
+</code>
+</pre>
+
+            	<h4 id="ct-init">Initialisation zone de dessin</h4>
+<pre>
+<code class="java">
+ct = new ControleGraphique();
+ct.setTaille( 600,500 );
+</code>
+</pre>
+
+            	<h4 id="ct-couleur">Couleur stylo</h4>
+<pre>
+<code class="java">
+ct.prendreStylo ( Couleur.COULEUR );
+</code>
+</pre>
+
+            	<h4 id="ct-formes">Formes</h4>
+<pre>
+<code class="java">
+ct.ligne ( a,  b, c,  d );
+ct.rectangle ( a, b, c, d);
+ct.rectanglePeint ( a, b, c, d, Couleur.COULEUR );
+ct.cercle ( x, y, r );
+ct.cerclePeint ( x, y, r, Couleur.COULEUR );
+</code>
+</pre>
+
+            	<h3 id="java-simple">Java de base</h3>
+<pre>
+<code class="java">
+import iut.algo.*;
+
+/* java simple
+* Auteur : Maxime L
+* Version : 2 du 14/10/22
+*/
+
+public class AneIdeAlgo
+{
+
+	public static void main(String[] argv)
+	{
+		/*-------------------------------*/
+		/* DONNEES                       */
+		/*-------------------------------*/
+
+		/*constantes*/
+		final int CONSTANTE = 0;
+
+		/*variables*/
+		int entree;
+		String sortie;
+
+		/*-------------------------------*/
+		/* INSTRUCTIONS                  */
+		/*-------------------------------*/
+
+		System.out.print("Entrez : ");
+		entree = Clavier.lire_int();
+
+		System.out.println("Sortie");
+	}
+
+}
+</code>
+</pre>
+
+	        </div>
+
+	    </div>
+
+
+<!--
+PIED DE PAGE
+-->
+		<footer  id="page_bas">
+
+		</footer>
+
+	</body>
+</html>

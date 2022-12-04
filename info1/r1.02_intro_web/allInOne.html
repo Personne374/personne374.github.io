@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			All In One
+		</title>
+		<meta name="Author" lang="fr" content="Maxime LEMOINE" />
+		<link rel="stylesheet" href="../../style/style-swag.css" media="all" type="text/css" />
+		<style>
+		div {background-color: #7F8FA6;}
+		span > p {background-color: #807059;}
+		</style>
+	</head>
+
+	<body>
+		<h1>Exemples des balises html : h1</h1>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<h4>h4</h4>
+		<h5>h5</h5>
+		<h6>h6</h6>
+
+		<hr>
+		<p>Liens :</p>
+		<a href="abcdaireWeb.html"> Lien vers mon abcdaire </a>
+
+		<hr>
+		<p>Commentaires :</p>
+		<!-- COUCOU TOI, ON ME VOIT QUE ICI -->
+		<p> < !-- Commentaires -- ></p>
+
+		<hr>
+
+		<p>Paragraphe simple<br>
+		avec un retour à la ligne</p>
+		<p>Paragraphe avec des balises trop stylaswag comme
+				<b>du gras</b> ou bien
+				<i>visiter l'italie</i> ou même en
+				<em>montagne (relief)</em> voir même
+				<u>sous la lignée des rois</u> et même
+				<s>barré à la coude à la barre</s>ou bien même
+				<mark>stabiloté<mark>.
+		</p>
+		<p>Paragraphe avec des balises
+				<big>OBEZES</big> et
+				<small>petites</small>
+		</p>
+		<p>
+				<tt>style machine à écrire oesh</tt>
+		</p>
+		<blockquote> "On écrit sur les murs à l'encre de nos veines." </blockquote>
+		<pre>
+def repetition(n):
+#ce Paragraphe prends en compte les espaces et retours à la ligne
+	for i in range(n):
+		print(i)
+		</pre>
+
+		<hr>
+		<p>Exposants :</p>
+
+		<p>Aire d'un cercle : r<sup>2</sup> x ℼ
+			<br> suite géométrique: u<sub>n+1</sub> = q x u<sub>n</sub>
+
+		<hr>
+		<p>Boites :</p>
+
+		<span><p>La balise span permet de mettre en forme une autre balise ou un groupement de mots</p></span>
+		<div>
+			<p>La balise div permet de mettre en fomre un groupement de balises</p>
+			<br>
+			<br>
+			<p>fin du div</p>
+		</div>
+
+		<hr>
+		<p>image cliquable :</p>
+
+		<img src="../../images/planetes.gif" width="145" height="126" alt="Planètes" usemap="#planetmap">
+		<map name="planetmap">
+			<area shape="rect" coords="0,0,82,126" href="../../images/soleil.gif" alt="Soleil" title="Soleil" />
+			<area shape="circle" coords="90,58,3" href="../../images/mercure.gif" alt="Mercure" title="Mercure" />
+			<area shape="circle" coords="124,58,8" href="../../images/venus.gif" alt="Vénus" title="Vénus" />
+		</map>
+
+
+		<hr>
+
+		<p> dictionnaires :<p>
+		<dl>
+			<dt>Avion</dt>
+			<dd>Machin qui vole</dd>
+			<dt>Dictionnaire</dt>
+			<dd>Boite à mots</dd>
+		</dl>
+
+		<hr>
+		<p>Listes :</p>
+
+		<ol>
+			<li>Ceci</li>
+			<li>est</li>
+			<li>une</li>
+			<li>liste</li>
+			<li>en</li>
+			<li>bande</li>
+			<li>organisée</li>
+		</ol>
+		<ul>
+			<li>Alors</li>
+			<li>que</li>
+			<li>celle-ci</li>
+			<li>non</li>
+		</ul>
+
+		<ol type="I">
+			<li>Titre<ol type="A">
+				<li>Sous-titre<ol type="i">
+					<li>liste 1bécile</li>
+					<li>liste 2 course</li>
+					<li>liste électorale (3)</li>
+					</ol></li>
+				<li>Sous titre  B</li>
+				<li>Sous titre C</li>
+				</ol></li>
+			<li><ol type="A">
+				<li>Sous Race</li>
+				<li>Sous Course</li>
+				<li>Sous Titre 3</li>
+				</ol></li>
+		</ol>
+
+		<hr>
+		<p>images :</p>
+
+		<img src="" alt="ceci est une image non affichée" title="Alex6 est trop bo"/>
+		<img src="../../images/damn.jpeg" title="Mon papa le boulanger de chez Boulanger"/>
+
+		<p>groupement d'images</p>
+		<figure>
+				<img src="../../images/cube.png">
+				<img src="../../images/cube.png">
+				<img src="../../images/cube.png">
+				<img src="../../images/cube.png">
+				<img src="../../images/cube.png">
+				<img src="../../images/cube.png">
+				<figcaption>Description du groupement d'image</figcaption>
+		</figure>
+
+		<hr>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Colonne 1</th>
+					<th>Colonne 2</th>
+					<th>Colonne 3</th>
+					<th>Colonne 4</th>
+					<th>Colonne 5</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>valeur A</td>
+					<td>valeur B</td>
+					<td>valeur C</td>
+					<td>valeur D</td>
+					<td>valeur E</td>
+				</tr>
+				<tr>
+					<td>valeur a</td>
+					<td colspan="3" align="center">Une trèèès longue case</td>
+					<td>valeur e</td>
+				</tr>
+			</tbody>
+
+			<tfoot>
+				<tr>
+					<td align="center">---</td>
+					<td align="center">---</td>
+					<td align="center">---</td>
+					<td align="center">---</td>
+					<td align="center">---</td>
+				</tr>
+			</tfoot>
+
+			<caption>Titre du tableau :)</caption>
+		</table>
+
+	</body>
+</html>
